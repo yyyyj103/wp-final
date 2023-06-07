@@ -1,0 +1,257 @@
+#header-nav li:nth-child(4) a {
+    color: #0085FF;
+}
+#header-nav li:nth-child(4) a::after{
+    content: '';
+    width: 200%; height: 5px;
+    border-radius: 50px;
+    background: #0085FF;
+    transition: all .3s ease-out;
+    position: absolute;
+    bottom: -150%; left: -50%;
+}
+body{
+    background-color: #fff3d4ab;
+}
+
+#top img{
+    width: 90px;
+    margin: 3% 0 0 5%;
+}
+#top img, #toptext{
+    vertical-align: top;
+}
+#toptext{
+    display: inline-block;
+    height: 140px;
+    margin: 3% 0 0 1%;
+}
+#toptext h2{
+    position: relative;
+    width: 190px;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Cafe24Ssurround';
+    color: #ffffff00;
+    -webkit-text-stroke: 1.5px #000;
+}
+#toptext h2::after{
+    content: '';
+    position: absolute;
+    width: 100%; height: 5px;
+    border-radius: 50px;
+    background: #FFC200;
+    top: 60px; left: 0;
+}
+#toptext1{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 2%;
+}
+#toptext1 span{
+    color: #FFC200;
+}
+#toptext2{
+    color: #FFC200;
+    font-size: 15px;
+    margin-top: 1%;
+}
+
+#middle{
+    display: flex;
+    justify-content: space-between;
+    margin: 3% 5%;
+    text-align: center;
+}
+.item{
+    width: 15%;
+    animation: item 0.5s ease-in-out;
+}
+@keyframes item{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.item img:hover{
+    opacity: 0.5;
+    transition: 0.3s;
+    scale: 0.9;
+}
+.item img{
+    width: 100%;
+    margin-bottom: 10%;
+}
+.name{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 15%;
+}
+.name {
+    background: linear-gradient(to right, #353535 50%, #FFC200 50%, #FFC200);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.5s ease;
+}
+.name:hover {
+    background-position: -100%;
+}
+
+.heart{
+    animation: heart 3s infinite;
+}
+
+@keyframes heart{
+    0% { transform: scale( 1 ); }
+    50% { transform: scale( 0.8 ); }
+    100% { transform: scale( 1 ); }
+}
+.heart-btn{
+    position: relative;
+    width: 8em; height: 4em;
+    font-size: 1.2em;
+    margin: 0 auto;
+}
+.heart-btn button{
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 1em;
+    color: #fff;
+}
+.heart-btn button::before, .heart-btn button::after{
+    content: '';
+    position: absolute;
+    top: -7px;
+    width: 30px; height: 20px;
+    background: #FFC200;
+    z-index: 0;
+    transition: 0.4s;
+}
+.heart-btn button::before{
+    left: 0;
+    border-radius: 0 2em 2em 0;
+}
+.heart-btn button::after{
+    right: 0;
+    border-radius: 2em 0 0 2em;
+}
+.heart-btn span{
+    position: absolute;
+    z-index: 1;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+
+}
+.heart-btn input[type="checkbox"]{
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0;
+}
+.heart-btn input[type="checkbox"]:checked + button::before{
+    transform: rotate(-45deg) translate(-5px, -10px);
+    animation: click 0.6s ease-in 0.4s forwards;
+}
+.heart-btn input[type="checkbox"]:checked + button::after{
+    transform: rotate(45deg) translate(5px, -10px);
+    animation: click 0.6s ease-in 0.4s forwards;
+}
+.heart-btn input[type="checkbox"]:checked + button span{
+    opacity: 0;
+}
+@keyframes click{
+    100%{
+        background: #FFC200;
+    }
+}
+
+
+@media (max-width: 1500px){
+    .name{
+        font-size: 20px;
+    }    
+    .comment{
+        font-size: 15px;
+    }
+}
+
+/*패드*/
+@media (max-width: 1023px){
+    #top{
+        margin-top: 2%;
+    }
+    #toptext1{
+        font-size: 20px;
+    }
+
+    #middle{
+        display: inline-block;
+        width: 100%;
+        margin: 3% 0;
+    }
+    .item{
+        width: 30%;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 5%;
+        padding-right: 5%;
+    }
+    footer{
+        top: 1900px;
+    }
+
+}
+/*모바일*/
+@media (max-width: 757px){ 
+    #top img{
+        width: 50px;
+    }
+    #toptext{
+        height: 100%;
+    }
+    #toptext1{
+        font-size: 15px;
+    }
+    #toptext2{
+        font-size: 10px;
+    }
+    #toptext h2{
+        font-size: 35px;
+    }
+    #toptext h2::after{
+        content: '';
+        position: absolute;
+        width: 72%; height: 5px;
+        border-radius: 50px;
+        background: #087700;
+        top: 40px; left: 0;
+    }
+    .item{
+        width: 80%;
+    }
+    .name{
+        font-size: 30px;
+        margin-bottom: 5%;
+    }    
+    .comment br{
+        display: none;
+    }
+    .comment{
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .heart{
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+    footer{
+        position: static;
+    }
+}

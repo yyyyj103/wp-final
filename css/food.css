@@ -1,0 +1,343 @@
+#header-nav li:nth-child(2) a {
+    color: #0085FF;
+}
+#header-nav li:nth-child(2) a::after{
+    content: '';
+    width: 200%; height: 5px;
+    border-radius: 50px;
+    background: #0085FF;
+    transition: all .3s ease-out;
+    position: absolute;
+    bottom: -150%; left: -50%;
+}
+body{
+    background-color: #e6f1e5d0;
+}
+
+#top img{
+    width: 90px;
+    margin: 3% 0 0 5%;
+}
+#top img, #toptext{
+    vertical-align: top;
+}
+#toptext{
+    display: inline-block;
+    height: 140px;
+    margin: 3% 0 0 1%;
+}
+#toptext h2{
+    position: relative;
+    width: 190px;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Cafe24Ssurround';
+    color: #ffffff00;
+    -webkit-text-stroke: 1.5px #000;
+}
+#toptext h2::after{
+    content: '';
+    position: absolute;
+    width: 100%; height: 5px;
+    border-radius: 50px;
+    background: #087700;
+    top: 60px; left: 0;
+}
+#toptext1{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 2%;
+}
+#toptext1 span{
+    color: #087700;
+}
+#toptext2{
+    color: #087700;
+    font-size: 15px;
+    margin-top: 1%;
+}
+
+#middle{
+    display: flex;
+    justify-content: space-between;
+}
+#side, #main{
+    vertical-align: top;
+}
+
+#side{
+    margin: 70px 8%;
+    margin-left: 10%;
+    width: 10%;
+}
+#side p{
+    font-size: 35px;
+    font-family: 'Cafe24Ssurround';
+    -webkit-text-stroke: 1.5px #000;
+    text-align: center;
+    background: linear-gradient(to right, #ffffff 50%, #087700 50%, #087700);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: click 3s infinite;
+}
+@keyframes click {
+    0% {
+        background-position: 0;
+    }
+  
+    50% {
+        background-position: -100%;
+    }
+    100%{
+        background-position: -200%;
+    }
+  }
+
+#side img{
+    width: 100%;
+    margin-top: 30px;
+    animation: sidecanfade 1s ease-in-out;
+    animation: sidecanscale 1s infinite;
+}
+@keyframes sidecanfade{
+    0% {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+@keyframes sidecanscale{
+    0% { transform: scale( 1 ); }
+    50% { transform: scale( 0.95 ); }
+    100% { transform: scale( 1 ); }
+}
+
+#side img:hover{
+    scale: 0.9;
+    transition: 0.5s;
+}
+
+#main{
+    position: relative;
+    width: 53%; height: 600px;
+    margin-top: 2%;
+    margin-right: 13%;
+    overflow: hidden;
+    animation: video 0.5s ease-in-out;
+}
+@keyframes item{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+video{
+    width: 100%;
+}
+#content{
+    position: relative;
+    height: 600px;
+    transition: 0.8s;
+}
+#content > * {
+    position: absolute;
+	display: inline-block;
+	vertical-align: top;
+	height: 100%;
+	width: 100%;
+}
+#slide{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    margin-top: 25%;
+    width: 100%; height: 0;
+}
+#slide img{
+    width: 100%;
+}
+#slide >div+div{
+    visibility: hidden;
+}
+#slide a{
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	left: 0;
+    opacity: 1;
+}
+#slide a:hover{
+	opacity: 0.5;
+}
+#slide a+a{
+	left: auto;
+	right: 0;
+}
+#bullet{
+	position: absolute;
+	z-index: 2;
+	top: 10px;
+	padding: 10px 0;
+	width: 100%;
+	text-align: center;
+}
+#bullet a{
+	display: inline-block;
+	width: 30px; height: 30px;
+	text-align: center;
+    color: #353535;
+	background: rgba(255, 255, 255, 1);
+	-webkit-transition: 0.3s;
+    transition: 0.3s;
+    border-radius: 50px;
+    margin: 0 2%;
+}
+#bullet > a+a{
+	background: rgba(255, 255, 255, 0.5); /* Dim all but first */
+}
+#bullet > a:hover{
+	background: rgba(255, 255, 255, 0.7);
+}
+
+#main >s:target ~ #bullet >* {
+    background: rgba(255, 255, 255, 0.5);
+}
+#s1:target ~ #bullet >*:nth-child(1){
+    background: rgba(255, 255, 255, 1);
+}
+#s2:target ~ #bullet >*:nth-child(2){
+    background: rgba(255, 255, 255, 1);
+}
+#s3:target ~ #bullet >*:nth-child(3){
+    background: rgba(255, 255, 255, 1);
+}
+
+#main >s:target ~ #slide >*{
+    visibility: hidden;
+}
+#s1:target ~ #slide >*:nth-child(1){
+    visibility: visible;
+}
+#s2:target ~ #slide >*:nth-child(2){
+    visibility: visible;
+}
+#s3:target ~ #slide >*:nth-child(3){
+    visibility: visible;
+}
+
+#main >s:target ~ #content >*{
+    visibility: hidden;
+}
+#s1:target ~ #content >*:nth-child(1){
+    visibility: visible;
+}
+#s2:target ~ #content >*:nth-child(2){
+    visibility: visible;
+}
+#s3:target ~ #content >*:nth-child(3){
+    visibility: visible;
+}
+
+
+/*패드*/
+@media (max-width: 1023px){
+    #top{
+        margin-top: 2%;
+    }
+    #toptext1{
+        font-size: 20px;
+    }
+
+    #middle{
+        margin-top: 5%;
+    }
+    
+    #side p{
+        font-size: 25px;
+    }
+    #main{
+        margin-top: 6%;
+    }
+    #bullet{
+        top: 0;
+    }    
+    #bullet a{
+        width: 20px; height: 20px;
+        font-size: 15px;
+    }    
+    #slide img{
+        width: 50%;
+    }   
+    #main{
+        width: 100%;
+        height: 500px;
+    }
+    #content{
+        height: 500px;
+    }
+ 
+}
+/*모바일*/
+@media (max-width: 757px){ 
+    body{
+        height: 100%;
+    }
+    #top img{
+        width: 50px;
+    }
+    #toptext{
+        height: 100%;
+    }
+    #toptext1{
+        font-size: 15px;
+    }
+    #toptext2{
+        font-size: 10px;
+    }
+    #toptext h2{
+        font-size: 35px;
+    }
+    #toptext h2::after{
+        content: '';
+        position: absolute;
+        width: 72%; height: 5px;
+        border-radius: 50px;
+        background: #087700;
+        top: 40px; left: 0;
+    }
+    #middle{
+        display: block;
+    }
+    #side{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 5%  0;
+    }
+    #side p{
+        font-size: 20px;
+        margin: 20px 0;
+    }
+    #side img{
+        width: 50px;
+        margin: 0;
+    }
+    #main{
+        width: 100%;
+        height: 100%;
+        margin-top: 2%;
+    }
+    #content{
+        height: 400px;
+    }
+    footer{
+        position: static;
+    }
+}

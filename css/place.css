@@ -1,0 +1,247 @@
+#header-nav li:nth-child(5) a::after{
+    content: '';
+    width: 200%; height: 5px;
+    border-radius: 50px;
+    background: #0085FF;
+    transition: all .3s ease-out;
+    position: absolute;
+    bottom: -150%; left: -50%;
+}
+body{
+    background-color: #EEF6FF;
+}
+
+#top img{
+    width: 90px;
+    margin: 3% 0 0 5%;
+}
+#top img, #toptext{
+    vertical-align: top;
+}
+#toptext{
+    display: inline-block;
+    height: 140px;
+    margin: 3% 0 0 1%;
+}
+#toptext h2{
+    position: relative;
+    width: 190px;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Cafe24Ssurround';
+    color: #ffffff00;
+    -webkit-text-stroke: 1.5px #000;
+}
+#toptext h2::after{
+    content: '';
+    position: absolute;
+    width: 100%; height: 5px;
+    border-radius: 50px;
+    background: #AEE000;
+    top: 60px; left: 0;
+}
+#toptext1{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 2%;
+}
+#toptext1 span{
+    color: #AEE000;
+}
+#toptext2{
+    color: #AEE000;
+    font-size: 15px;
+    margin-top: 1%;
+}
+
+#card-container{
+    width: 87%; height: 60vh;
+    margin: 2% auto;
+    display: flex;
+    animation: card 0.5s ease-in-out;
+}
+@keyframes card{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+#c1{
+    background-image: url(../images/place-bg-1.png);
+}
+#c2{
+    background-image: url(../images/place-bg-2.png);
+}
+#c3{
+    background-image: url(../images/place-bg-3.png);
+}
+#c4{
+    background-image: url(../images/place-bg-4.png);
+}
+.bg{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 580px;
+    background-color: #000;
+    opacity: 0.5;
+    z-index: 0;
+}
+.main, .name, .address, .info, .sub{
+    z-index: 1;
+    color: #fff;
+}
+.card{
+    flex: 1;
+    position: relative;
+    display: inline-block;
+    width: 24.5%; height: 100%;
+    background: no-repeat center / cover;
+    transition: all .5s;
+}
+.card:hover{
+    flex: 3;
+}
+.card:not(:hover){
+    flex: 0.7;
+}
+.card:hover .content{
+    opacity: 1;
+}
+
+.content{
+    position: absolute;
+    width: 100%;
+    transition: 0.7s;
+
+    opacity: 0;
+}
+.card div > *{
+    position: absolute;
+    background-image: none;
+}
+.main{
+    top: 150px;
+    left: 50px;
+}
+.name, .address, .info, .sub{
+    top: 150px;
+    left: 400px;
+}
+.address{
+    margin-top: 7%;
+}
+.info{
+    margin-top: 14%;
+}
+.sub{
+    margin-top: 20%;
+}
+
+
+@media (max-width: 1450px){
+    .content img{
+        width: 40%;
+    }
+    .name, .address, .info, .sub{
+        left: 50%;
+    }
+    .address{
+        line-height: 25px;
+    }
+    .info{
+        margin-top: 16%;
+    }  
+    .sub{
+        margin-top: 26%;
+    }      
+}
+/*패드*/
+@media (max-width: 1023px){
+    .main{
+        top: 50px;
+        left: 30%;
+    }
+    
+    .name, .address, .info, .sub{
+        top: 280px;
+        left: 30%;
+    }
+    .address{
+        line-height: 20px;
+    }
+}
+@media (max-width: 970px){
+    #toptext1{
+        font-size: 28px;
+    }
+    .content img{
+        width: 40%;
+    }
+    .main{
+        top: 80px;
+        left: 30%;
+    }
+    .name{
+        margin-top: 5%;
+    }
+    .address{
+        margin-top: 15%;
+    }
+    .info{
+        margin-top: 25%;
+    }  
+    .sub{
+        margin-top: 40%;
+    }      
+}
+/*모바일*/
+@media (max-width: 757px){  
+    #top img{
+        width: 50px;
+    }
+    #toptext{
+        height: 100%;
+    }
+    #toptext1{
+        font-size: 15px;
+    }
+    #toptext2{
+        font-size: 10px;
+    }
+    #toptext h2{
+        font-size: 35px;
+    }
+    #toptext h2::after{
+        content: '';
+        position: absolute;
+        width: 72%; height: 5px;
+        border-radius: 50px;
+        background: #087700;
+        top: 40px; left: 0;
+    }
+    .card:hover{
+        flex: 5;
+    }
+    .content p{
+        font-size: 15px;
+        line-height: 15px
+    }
+    .main{
+        top: 100px;
+    }
+    .address{
+        margin-top: 20%;
+    }
+    .info{
+        margin-top: 35%;
+    }  
+    .sub{
+        margin-top: 50%;
+    }      
+    footer{
+        position: static;
+    }
+}
