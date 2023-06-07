@@ -119,4 +119,7 @@ footer{
         display: flex;
         justify-content: space-between;
     }
+    footer{
+        color: #353535; 
+    }
 }
